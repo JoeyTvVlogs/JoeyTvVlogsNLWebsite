@@ -11,23 +11,29 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    padding: 12px 20px;
     background: black;
     box-shadow: 0 0 20px cyan;
+    flex-wrap: wrap;
 }
 
 .logo-text {
     color: cyan;
     text-shadow: 0 0 10px magenta;
+    font-size: 20px;
 }
 
-/* Tabs buttons */
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 10px;
+}
+
 .tabs button {
     background: black;
     border: 2px solid cyan;
     color: white;
-    padding: 8px 15px;
-    margin-left: 10px;
+    padding: 8px 14px;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
@@ -38,10 +44,10 @@ body {
     color: black;
 }
 
-/* Tab pages */
+/* Pages */
 .tab {
     display: none;
-    padding: 60px 20px;
+    padding: 40px 15px;
 }
 
 .tab.active {
@@ -50,13 +56,13 @@ body {
 
 /* Round Logo */
 .channel-logo {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 50%;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     border: 4px solid cyan;
-    box-shadow: 0 0 30px cyan, 0 0 60px magenta;
+    box-shadow: 0 0 25px cyan, 0 0 50px magenta;
 }
 
 /* Social Buttons */
@@ -64,18 +70,18 @@ body {
     margin-top: 25px;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
 .social-btn {
-    padding: 12px 22px;
+    padding: 12px 18px;
     border-radius: 10px;
     font-weight: bold;
     text-decoration: none;
     color: white;
     transition: 0.3s;
-    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    min-width: 130px;
 }
 
 .youtube { background: red; }
@@ -83,8 +89,8 @@ body {
 .tiktok { background: black; border: 2px solid white; }
 
 .social-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px cyan;
+    transform: scale(1.08);
+    box-shadow: 0 0 20px cyan;
 }
 
 /* Survey Button */
@@ -93,14 +99,53 @@ body {
     background: linear-gradient(45deg, magenta, cyan);
     border: none;
     color: white;
-    font-size: 18px;
+    font-size: 17px;
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 0 20px magenta;
+    box-shadow: 0 0 18px magenta;
     transition: 0.3s;
 }
 
 .survey-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 30px cyan;
+    box-shadow: 0 0 25px cyan;
+}
+
+/* 📱 MOBILE SUPPORT */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .channel-logo {
+        width: 160px;
+        height: 160px;
+    }
+
+    .tab {
+        padding: 30px 15px;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .social-btn {
+        width: 90%;
+        max-width: 300px;
+        margin: auto;
+    }
+
+    .survey-btn {
+        width: 90%;
+        max-width: 300px;
+    }
 }
