@@ -1,0 +1,73 @@
+body {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: black;
+    box-shadow: 0 0 20px cyan;
+}
+
+.logo-text {
+    color: cyan;
+    text-shadow: 0 0 10px magenta;
+}
+
+.tabs button {
+    background: black;
+    border: 2px solid cyan;
+    color: white;
+    padding: 8px 15px;
+    margin-left: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tabs button:hover {
+    background: cyan;
+    color: black;
+}
+
+/* Tabs */
+.tab {
+    display: none;
+    padding: 60px 20px;
+}
+
+.tab.active {
+    display: block;
+}
+
+/* Logo */
+.channel-logo {
+    width: 220px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 25px cyan);
+}
+
+/* Button */
+.survey-btn {
+    padding: 14px 25px;
+    background: linear-gradient(45deg, magenta, cyan);
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 20px magenta;
+    transition: 0.3s;
+}
+
+.survey-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px cyan;
+}
