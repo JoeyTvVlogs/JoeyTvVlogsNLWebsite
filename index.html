@@ -7,19 +7,33 @@
 </head>
 <body>
 
+<canvas id="particles"></canvas>
+
 <nav class="navbar">
-    <h1 class="logo-text">🎮 JoeyTvVlogsNL</h1>
+    <h1 class="logo-text glitch">🎮 JoeyTvVlogsNL</h1>
     <div class="tabs">
         <button onclick="showTab('home')">Home</button>
         <button onclick="showTab('links')">Links</button>
     </div>
 </nav>
 
-<div id="home" class="tab active">
+<div id="home" class="tab active glow-box">
     <img src="Images/Logo.png" class="channel-logo">
 
     <h2>Welkom op JoeyTvVlogsNL!</h2>
     <p>Vlogs, gaming en entertainment — abonneer voor epische content 🔥</p>
+
+    <div class="counter-box">
+        <h3>📊 Live Subscribers</h3>
+        <p id="subCount">Laden...</p>
+    </div>
+
+    <div class="video-box">
+        <h3>🎬 Laatste YouTube Video</h3>
+        <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed?listType=user_uploads&list=joeytvvlogsnl"
+        frameborder="0" allowfullscreen></iframe>
+    </div>
 
     <div class="social-links">
         <a href="https://youtube.com/@joeytvvlogsnl?si=v5r31LZqsGZS3Q40" target="_blank" class="social-btn youtube">YouTube</a>
@@ -28,7 +42,7 @@
     </div>
 </div>
 
-<div id="links" class="tab">
+<div id="links" class="tab glow-box">
     <h2>Wij willen graag uw ervaring weten!</h2>
     <p>Vul deze vragenlijst in om ons te helpen verbeteren 💜</p>
 
