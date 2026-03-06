@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JTVNL | JoeyTvVlogsNL</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#0a0a0a;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-size:22px;
+font-weight:700;
+color:#ff003c;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#ff003c;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+text-align:center;
+background:radial-gradient(circle at center,#111,#000);
+}
+
+.hero h1{
+font-size:60px;
+background:linear-gradient(90deg,#ff003c,#ff7a00);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+margin-top:10px;
+opacity:0.8;
+}
+
+.hero button{
+margin-top:30px;
+padding:14px 35px;
+border:none;
+background:#ff003c;
+color:white;
+font-size:16px;
+border-radius:30px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.hero button:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #ff003c;
+}
+
+/* SECTIONS */
+
+section{
+padding:120px 10%;
+}
+
+.section-title{
+font-size:40px;
+margin-bottom:40px;
+text-align:center;
+}
+
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#121212;
+padding:30px;
+border-radius:15px;
+transition:0.4s;
+border:1px solid #1f1f1f;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(255,0,60,0.4);
+}
+
+/* SOCIAL */
+
+.socials{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.socials a{
+color:white;
+font-size:16px;
+text-decoration:none;
+padding:14px 28px;
+border-radius:40px;
+background:#1a1a1a;
+transition:0.3s;
+border:1px solid #2a2a2a;
+}
+
+.socials a:hover{
+background:#ff003c;
+box-shadow:0 0 20px #ff003c;
+transform:translateY(-3px);
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+background:#050505;
+opacity:0.7;
+}
+
+/* ANIMATIONS */
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">JTVNL</div>
+
+<ul>
+<li><a href="#home" data-text="home">Home</a></li>
+<li><a href="#channels" data-text="channels">Channels</a></li>
+<li><a href="#about" data-text="about">About</a></li>
+<li><a href="#follow" data-text="follow">Follow</a></li>
+</ul>
+
+</nav>
+
+<section class="hero" id="home">
+
+<h1>JoeyTvVlogsNL</h1>
+<p data-text="heroText">Gaming • Vlogs • Entertainment</p>
+
+<button onclick="scrollToSection()" data-text="explore">Explore</button>
+
+</section>
+
+<section id="channels" class="fade">
+
+<h2 class="section-title" data-text="content">Content</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3 data-text="youtube">YouTube Videos</h3>
+</div>
+
+<div class="card">
+<h3 data-text="twitch">Twitch Streams</h3>
+</div>
+
+<div class="card">
+<h3 data-text="tiktok">TikTok Clips</h3>
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="fade">
+
+<h2 class="section-title" data-text="aboutTitle">About JTVNL</h2>
+
+<p style="max-width:700px;margin:auto;text-align:center;opacity:0.8" data-text="aboutText">
+Welcome to JoeyTvVlogsNL also known as JTVNL.
+This channel is about gaming and entertainment.
+</p>
+
+</section>
+
+<section id="follow" class="fade">
+
+<h2 class="section-title" data-text="followTitle">Follow JTVNL</h2>
+
+<div class="socials">
+
+<a href="https://www.youtube.com/@joeytvvlogsnl" target="_blank">YouTube</a>
+
+<a href="https://tiktok.com/@joeytvvlogs" target="_blank">TikTok</a>
+
+<a href="https://twitch.tv/joey_tv_vlogs" target="_blank">Twitch</a>
+
+<a href="https://discord.gg/wkHuYFFpkK" target="_blank">Discord</a>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 JoeyTvVlogsNL / JTVNL
+
+</footer>
+
+<script>
+
+/* SMOOTH SCROLL */
+
+function scrollToSection(){
+document.getElementById("channels").scrollIntoView({
+behavior:"smooth"
+});
+}
+
+/* FADE ANIMATION */
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el);
+});
+
+/* LANGUAGE SYSTEM */
+
+const translations = {
+
+en:{
+home:"Home",
+channels:"Channels",
+about:"About",
+follow:"Follow",
+heroText:"Gaming • Vlogs • Entertainment",
+explore:"Explore",
+content:"Content",
+youtube:"YouTube Videos",
+twitch:"Twitch Streams",
+tiktok:"TikTok Clips",
+aboutTitle:"About JTVNL",
+aboutText:"Welcome to JoeyTvVlogsNL also known as JTVNL. This channel is all about gaming, entertainment and fun content.",
+followTitle:"Follow JTVNL"
+},
+
+nl:{
+home:"Home",
+channels:"Kanalen",
+about:"Over",
+follow:"Volgen",
+heroText:"Gaming • Vlogs • Entertainment",
+explore:"Ontdek",
+content:"Content",
+youtube:"YouTube Video's",
+twitch:"Twitch Streams",
+tiktok:"TikTok Clips",
+aboutTitle:"Over JTVNL",
+aboutText:"Welkom bij JoeyTvVlogsNL ook bekend als JTVNL. Hier vind je gaming, entertainment en leuke content.",
+followTitle:"Volg JTVNL"
+},
+
+de:{
+home:"Start",
+channels:"Kanäle",
+about:"Über",
+follow:"Folgen",
+heroText:"Gaming • Vlogs • Unterhaltung",
+explore:"Entdecken",
+content:"Inhalt",
+youtube:"YouTube Videos",
+twitch:"Twitch Streams",
+tiktok:"TikTok Clips",
+aboutTitle:"Über JTVNL",
+aboutText:"Willkommen bei JoeyTvVlogsNL auch bekannt als JTVNL. Hier findest du Gaming und Unterhaltung.",
+followTitle:"Folge JTVNL"
+},
+
+pl:{
+home:"Strona",
+channels:"Kanały",
+about:"O mnie",
+follow:"Obserwuj",
+heroText:"Gaming • Vlogi • Rozrywka",
+explore:"Odkryj",
+content:"Treść",
+youtube:"Filmy YouTube",
+twitch:"Streamy Twitch",
+tiktok:"TikTok Klipy",
+aboutTitle:"O JTVNL",
+aboutText:"Witamy na JoeyTvVlogsNL znanym też jako JTVNL. Gaming i rozrywka.",
+followTitle:"Obserwuj JTVNL"
+}
+
+};
+
+function detectLanguage(){
+
+let lang = navigator.language.substring(0,2);
+
+if(!translations[lang]){
+lang="en";
+}
+
+applyLanguage(lang);
+
+}
+
+function applyLanguage(lang){
+
+document.querySelectorAll("[data-text]").forEach(el=>{
+let key = el.getAttribute("data-text");
+el.textContent = translations[lang][key];
+});
+
+}
+
+detectLanguage();
+
+</script>
+
+</body>
+</html>
