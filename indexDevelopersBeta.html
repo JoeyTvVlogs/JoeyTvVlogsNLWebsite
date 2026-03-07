@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>JTVNL | JoeyTvVlogsNL</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
 <style>
 
@@ -18,12 +21,17 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#0a0a0a;
+background:#050505;
 color:white;
 overflow-x:hidden;
 }
 
-/* NAVBAR */
+#particles{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+}
 
 nav{
 position:fixed;
@@ -53,36 +61,32 @@ list-style:none;
 nav ul li a{
 color:white;
 text-decoration:none;
-font-weight:500;
-transition:0.3s;
+transition:.3s;
 }
 
 nav ul li a:hover{
 color:#ff003c;
 }
 
-/* HERO */
-
 .hero{
 height:100vh;
 display:flex;
+flex-direction:column;
 align-items:center;
 justify-content:center;
-flex-direction:column;
 text-align:center;
-background:radial-gradient(circle at center,#111,#000);
 }
 
 .hero h1{
-font-size:60px;
+font-size:65px;
 background:linear-gradient(90deg,#ff003c,#ff7a00);
 -webkit-background-clip:text;
 color:transparent;
 }
 
 .hero p{
+opacity:.8;
 margin-top:10px;
-opacity:0.8;
 }
 
 .hero button{
@@ -90,19 +94,14 @@ margin-top:30px;
 padding:14px 35px;
 border:none;
 background:#ff003c;
-color:white;
-font-size:16px;
 border-radius:30px;
+color:white;
 cursor:pointer;
-transition:0.3s;
 }
 
 .hero button:hover{
-transform:scale(1.05);
 box-shadow:0 0 20px #ff003c;
 }
-
-/* SECTIONS */
 
 section{
 padding:120px 10%;
@@ -110,32 +109,22 @@ padding:120px 10%;
 
 .section-title{
 font-size:40px;
-margin-bottom:40px;
 text-align:center;
+margin-bottom:40px;
 }
 
-/* CARDS */
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+.video{
+display:flex;
+justify-content:center;
 }
 
-.card{
-background:#121212;
-padding:30px;
+iframe{
+width:900px;
+max-width:100%;
+height:500px;
+border:none;
 border-radius:15px;
-transition:0.4s;
-border:1px solid #1f1f1f;
 }
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px rgba(255,0,60,0.4);
-}
-
-/* SOCIAL */
 
 .socials{
 display:flex;
@@ -145,32 +134,23 @@ flex-wrap:wrap;
 }
 
 .socials a{
-color:white;
-font-size:16px;
-text-decoration:none;
 padding:14px 28px;
-border-radius:40px;
 background:#1a1a1a;
-transition:0.3s;
-border:1px solid #2a2a2a;
+border-radius:30px;
+color:white;
+text-decoration:none;
 }
 
 .socials a:hover{
 background:#ff003c;
-box-shadow:0 0 20px #ff003c;
-transform:translateY(-3px);
+box-shadow:0 0 15px #ff003c;
 }
-
-/* FOOTER */
 
 footer{
 text-align:center;
 padding:30px;
-background:#050505;
-opacity:0.7;
+opacity:.6;
 }
-
-/* ANIMATIONS */
 
 .fade{
 opacity:0;
@@ -188,14 +168,16 @@ transform:translateY(0);
 
 <body>
 
+<div id="particles"></div>
+
 <nav>
 
 <div class="logo">JTVNL</div>
 
 <ul>
 <li><a href="#home" data-text="home">Home</a></li>
-<li><a href="#channels" data-text="channels">Channels</a></li>
-<li><a href="#about" data-text="about">About</a></li>
+<li><a href="#content" data-text="channels">Content</a></li>
+<li><a href="#stream">Stream</a></li>
 <li><a href="#follow" data-text="follow">Follow</a></li>
 </ul>
 
@@ -206,40 +188,31 @@ transform:translateY(0);
 <h1>JoeyTvVlogsNL</h1>
 <p data-text="heroText">Gaming • Vlogs • Entertainment</p>
 
-<button onclick="scrollToSection()" data-text="explore">Explore</button>
+<button onclick="document.getElementById('content').scrollIntoView({behavior:'smooth'})" data-text="explore">Explore</button>
 
 </section>
 
-<section id="channels" class="fade">
+<section id="content" class="fade">
 
-<h2 class="section-title" data-text="content">Content</h2>
+<h2 class="section-title">YouTube</h2>
 
-<div class="cards">
+<div class="video">
 
-<div class="card">
-<h3 data-text="youtube">YouTube Videos</h3>
-</div>
-
-<div class="card">
-<h3 data-text="twitch">Twitch Streams</h3>
-</div>
-
-<div class="card">
-<h3 data-text="tiktok">TikTok Clips</h3>
-</div>
+<iframe src="https://www.youtube.com/embed?listType=user_uploads&list=joeytvvlogsnl"></iframe>
 
 </div>
 
 </section>
 
-<section id="about" class="fade">
+<section id="stream" class="fade">
 
-<h2 class="section-title" data-text="aboutTitle">About JTVNL</h2>
+<h2 class="section-title">Live Stream</h2>
 
-<p style="max-width:700px;margin:auto;text-align:center;opacity:0.8" data-text="aboutText">
-Welcome to JoeyTvVlogsNL also known as JTVNL.
-This channel is about gaming and entertainment.
-</p>
+<div class="video">
+
+<iframe src="https://player.twitch.tv/?channel=joeytvvlogsnl&parent=localhost"></iframe>
+
+</div>
 
 </section>
 
@@ -251,9 +224,9 @@ This channel is about gaming and entertainment.
 
 <a href="https://www.youtube.com/@joeytvvlogsnl" target="_blank">YouTube</a>
 
-<a href="https://tiktok.com/@joeytvvlogs" target="_blank">TikTok</a>
+<a href="https://www.tiktok.com/@joeytvvlogs.nl" target="_blank">TikTok</a>
 
-<a href="https://twitch.tv/joey_tv_vlogs" target="_blank">Twitch</a>
+<a href="https://www.twitch.tv/joeytvvlogsnl" target="_blank">Twitch</a>
 
 <a href="https://discord.gg/wkHuYFFpkK" target="_blank">Discord</a>
 
@@ -269,17 +242,17 @@ This channel is about gaming and entertainment.
 
 <script>
 
-/* SMOOTH SCROLL */
-
-function scrollToSection(){
-document.getElementById("channels").scrollIntoView({
-behavior:"smooth"
-});
+tsParticles.load("particles",{
+particles:{
+number:{value:80},
+color:{value:"#ff003c"},
+links:{enable:true,color:"#ff003c"},
+move:{enable:true,speed:1},
+size:{value:2}
 }
+});
 
-/* FADE ANIMATION */
-
-const observer = new IntersectionObserver(entries=>{
+const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
 entry.target.classList.add("show");
@@ -287,75 +260,43 @@ entry.target.classList.add("show");
 });
 });
 
-document.querySelectorAll(".fade").forEach(el=>{
-observer.observe(el);
-});
+document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
 
-/* LANGUAGE SYSTEM */
-
-const translations = {
+const translations={
 
 en:{
 home:"Home",
-channels:"Channels",
-about:"About",
+channels:"Content",
 follow:"Follow",
 heroText:"Gaming • Vlogs • Entertainment",
 explore:"Explore",
-content:"Content",
-youtube:"YouTube Videos",
-twitch:"Twitch Streams",
-tiktok:"TikTok Clips",
-aboutTitle:"About JTVNL",
-aboutText:"Welcome to JoeyTvVlogsNL also known as JTVNL. This channel is all about gaming, entertainment and fun content.",
 followTitle:"Follow JTVNL"
 },
 
 nl:{
 home:"Home",
-channels:"Kanalen",
-about:"Over",
+channels:"Content",
 follow:"Volgen",
 heroText:"Gaming • Vlogs • Entertainment",
 explore:"Ontdek",
-content:"Content",
-youtube:"YouTube Video's",
-twitch:"Twitch Streams",
-tiktok:"TikTok Clips",
-aboutTitle:"Over JTVNL",
-aboutText:"Welkom bij JoeyTvVlogsNL ook bekend als JTVNL. Hier vind je gaming, entertainment en leuke content.",
 followTitle:"Volg JTVNL"
 },
 
 de:{
 home:"Start",
-channels:"Kanäle",
-about:"Über",
+channels:"Inhalt",
 follow:"Folgen",
-heroText:"Gaming • Vlogs • Unterhaltung",
+heroText:"Gaming • Unterhaltung",
 explore:"Entdecken",
-content:"Inhalt",
-youtube:"YouTube Videos",
-twitch:"Twitch Streams",
-tiktok:"TikTok Clips",
-aboutTitle:"Über JTVNL",
-aboutText:"Willkommen bei JoeyTvVlogsNL auch bekannt als JTVNL. Hier findest du Gaming und Unterhaltung.",
 followTitle:"Folge JTVNL"
 },
 
 pl:{
 home:"Strona",
-channels:"Kanały",
-about:"O mnie",
+channels:"Treść",
 follow:"Obserwuj",
-heroText:"Gaming • Vlogi • Rozrywka",
+heroText:"Gaming • Rozrywka",
 explore:"Odkryj",
-content:"Treść",
-youtube:"Filmy YouTube",
-twitch:"Streamy Twitch",
-tiktok:"TikTok Klipy",
-aboutTitle:"O JTVNL",
-aboutText:"Witamy na JoeyTvVlogsNL znanym też jako JTVNL. Gaming i rozrywka.",
 followTitle:"Obserwuj JTVNL"
 }
 
@@ -363,21 +304,13 @@ followTitle:"Obserwuj JTVNL"
 
 function detectLanguage(){
 
-let lang = navigator.language.substring(0,2);
+let lang=navigator.language.substring(0,2);
 
-if(!translations[lang]){
-lang="en";
-}
-
-applyLanguage(lang);
-
-}
-
-function applyLanguage(lang){
+if(!translations[lang]) lang="en";
 
 document.querySelectorAll("[data-text]").forEach(el=>{
-let key = el.getAttribute("data-text");
-el.textContent = translations[lang][key];
+let key=el.getAttribute("data-text");
+el.textContent=translations[lang][key];
 });
 
 }
