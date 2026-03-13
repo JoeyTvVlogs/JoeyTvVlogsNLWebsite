@@ -1,52 +1,350 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>JoeyTvVlogsNL</title>
-    <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JTVNL | JoeyTvVlogsNL</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+#particles{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-size:22px;
+font-weight:700;
+color:#ff003c;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#ff003c;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:65px;
+background:linear-gradient(90deg,#ff003c,#ff7a00);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+opacity:.8;
+margin-top:10px;
+}
+
+.hero button{
+margin-top:30px;
+padding:14px 35px;
+border:none;
+background:#ff003c;
+border-radius:30px;
+color:white;
+cursor:pointer;
+}
+
+.hero button:hover{
+box-shadow:0 0 20px #ff003c;
+}
+
+section{
+padding:120px 10%;
+}
+
+.section-title{
+font-size:40px;
+text-align:center;
+margin-bottom:40px;
+}
+
+.video{
+display:flex;
+justify-content:center;
+}
+
+iframe{
+width:900px;
+max-width:100%;
+height:500px;
+border:none;
+border-radius:15px;
+}
+
+.socials{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.socials a{
+padding:14px 28px;
+background:#1a1a1a;
+border-radius:30px;
+color:white;
+text-decoration:none;
+}
+
+.socials a:hover{
+background:#ff003c;
+box-shadow:0 0 15px #ff003c;
+}
+
+footer{
+text-align:center;
+padding:30px;
+opacity:.6;
+}
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
 </head>
+
 <body>
 
-<canvas id="particles"></canvas>
+<div id="particles"></div>
 
-<nav class="navbar">
-    <h1 class="logo-text glitch">🎮 JoeyTvVlogsNL</h1>
-    <div class="tabs">
-        <button onclick="showTab('home')">Home</button>
-        <button onclick="showTab('links')">Links</button>
-    </div>
+<nav>
+
+<div class="logo">JTVNL</div>
+
+<ul>
+<li><a href="#home" data-text="home">Home</a></li>
+<li><a href="#content" data-text="channels">Content</a></li>
+<li><a href="#stream">Stream</a></li>
+<li><a href="#follow" data-text="follow">Follow</a></li>
+</ul>
+
 </nav>
 
-<div id="home" class="tab active glow-box">
-    <img src="Images/Logo.png" class="channel-logo">
+<section class="hero" id="home">
 
-    <h2>Welkom op JoeyTvVlogsNL!</h2>
-    <p>Vlogs, gaming en entertainment — abonneer voor epische content 🔥</p>
+<h1>JoeyTvVlogsNL</h1>
+<p data-text="heroText">Gaming • Vlogs • Entertainment</p>
 
+<button onclick="document.getElementById('content').scrollIntoView({behavior:'smooth'})" data-text="explore">Explore</button>
 
-    <div class="video-box">
-        <h3>🎬 Laatste YouTube Video</h3>
-        <iframe width="560" height="315" 
-        src="https://www.youtube.com/embed?listType=user_uploads&list=joeytvvlogsnl"
-        frameborder="0" allowfullscreen></iframe>
-    </div>
+</section>
 
-    <div class="social-links">
-        <a href="https://youtube.com/@joeytvvlogsnl?si=v5r31LZqsGZS3Q40" target="_blank" class="social-btn youtube">YouTube</a>
-        <a href="https://www.twitch.tv/joeytvvlogsnl" target="_blank" class="social-btn twitch">Twitch</a>
-        <a href="https://www.tiktok.com/@joeytvvlogs.nl" target="_blank" class="social-btn tiktok">TikTok</a>
-    </div>
+<section id="content" class="fade">
+
+<h2 class="section-title">Latest YouTube Video</h2>
+
+<div class="video">
+
+<iframe id="youtubeVideo" src="" allowfullscreen></iframe>
+
 </div>
 
-<div id="links" class="tab glow-box">
-    <h2>Wij willen graag uw ervaring weten!</h2>
-    <p>Vul deze vragenlijst in om ons te helpen verbeteren 💜</p>
+</section>
 
-    <a href="https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAARVTZxdUQTNFWVhOUFlIS1g4STFYNTNFQzMxVTZRNi4u&route=shorturl" target="_blank">
-        <button class="survey-btn">Start VragenLijst</button>
-    </a>
+<section id="stream" class="fade">
+
+<h2 class="section-title">Live Twitch Stream</h2>
+
+<div class="video">
+
+<iframe
+src="https://player.twitch.tv/?channel=joeytvvlogsnl&parent=joeytvvlogs.github.io"
+allowfullscreen>
+</iframe>
+
 </div>
 
-<script src="script.js"></script>
+</section>
+
+<section id="follow" class="fade">
+
+<h2 class="section-title" data-text="followTitle">Follow JTVNL</h2>
+
+<div class="socials">
+
+<a href="https://www.youtube.com/@joeytvvlogsnl" target="_blank">YouTube</a>
+
+<a href="https://www.tiktok.com/@joeytvvlogs.nl" target="_blank">TikTok</a>
+
+<a href="https://www.twitch.tv/joeytvvlogsnl" target="_blank">Twitch</a>
+
+<a href="https://discord.gg/wkHuYFFpkK" target="_blank">Discord</a>
+
+<a href="https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAARVTZxdUQTNFWVhOUFlIS1g4STFYNTNFQzMxVTZRNi4u&route=shorturl" target="_blank">Geef Ons Uw Mening</a>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 JoeyTvVlogsNL / JTVNL
+
+</footer>
+
+<script>
+
+/* PARTICLES BACKGROUND */
+
+tsParticles.load("particles",{
+particles:{
+number:{value:80},
+color:{value:"#ff003c"},
+links:{enable:true,color:"#ff003c"},
+move:{enable:true,speed:1},
+size:{value:2}
+}
+});
+
+/* SCROLL ANIMATIONS */
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
+
+/* AUTO YOUTUBE VIDEO */
+
+const channelID="UCDZjmPDwptosMMeWleyNzng";
+
+fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=${channelID}`)
+.then(response=>response.json())
+.then(data=>{
+
+const latestVideo=data.items[0].link;
+const videoID=latestVideo.split("v=")[1];
+
+document.getElementById("youtubeVideo").src=
+"https://www.youtube.com/embed/"+videoID;
+
+});
+
+/* LANGUAGE */
+
+const translations={
+
+en:{
+home:"Home",
+channels:"Content",
+follow:"Follow",
+heroText:"Gaming • Vlogs • Entertainment",
+explore:"Explore",
+followTitle:"Follow JTVNL"
+},
+
+nl:{
+home:"Home",
+channels:"Content",
+follow:"Volgen",
+heroText:"Gaming • Vlogs • Entertainment",
+explore:"Ontdek",
+followTitle:"Volg JTVNL"
+},
+
+de:{
+home:"Start",
+channels:"Inhalt",
+follow:"Folgen",
+heroText:"Gaming • Unterhaltung",
+explore:"Entdecken",
+followTitle:"Folge JTVNL"
+},
+
+pl:{
+home:"Strona",
+channels:"Treść",
+follow:"Obserwuj",
+heroText:"Gaming • Rozrywka",
+explore:"Odkryj",
+followTitle:"Obserwuj JTVNL"
+}
+
+};
+
+function detectLanguage(){
+
+let lang=navigator.language.substring(0,2);
+
+if(!translations[lang]) lang="en";
+
+document.querySelectorAll("[data-text]").forEach(el=>{
+let key=el.getAttribute("data-text");
+el.textContent=translations[lang][key];
+});
+
+}
+
+detectLanguage();
+
+</script>
+
 </body>
 </html>
