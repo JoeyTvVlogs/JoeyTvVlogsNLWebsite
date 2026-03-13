@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>JoeyTvVlogsNL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<canvas id="particles"></canvas>
+
+<nav class="navbar">
+    <h1 class="logo-text glitch">🎮 JoeyTvVlogsNL</h1>
+    <div class="tabs">
+        <button onclick="showTab('home')">Home</button>
+        <button onclick="showTab('links')">Links</button>
+    </div>
+</nav>
+
+<div id="home" class="tab active glow-box">
+    <img src="Images/Logo.png" class="channel-logo">
+
+    <h2>Welkom op JoeyTvVlogsNL!</h2>
+    <p>Vlogs, gaming en entertainment — abonneer voor epische content 🔥</p>
+
+
+    <div class="video-box">
+        <h3>🎬 Laatste YouTube Video</h3>
+        <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed?listType=user_uploads&list=joeytvvlogsnl"
+        frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="social-links">
+        <a href="https://youtube.com/@joeytvvlogsnl?si=v5r31LZqsGZS3Q40" target="_blank" class="social-btn youtube">YouTube</a>
+        <a href="https://www.twitch.tv/joeytvvlogsnl" target="_blank" class="social-btn twitch">Twitch</a>
+        <a href="https://www.tiktok.com/@joeytvvlogs.nl" target="_blank" class="social-btn tiktok">TikTok</a>
+    </div>
+</div>
+
+<div id="links" class="tab glow-box">
+    <h2>Wij willen graag uw ervaring weten!</h2>
+    <p>Vul deze vragenlijst in om ons te helpen verbeteren 💜</p>
+
+    <a href="https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAARVTZxdUQTNFWVhOUFlIS1g4STFYNTNFQzMxVTZRNi4u&route=shorturl" target="_blank">
+        <button class="survey-btn">Start VragenLijst</button>
+    </a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
